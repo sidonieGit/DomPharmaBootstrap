@@ -8,28 +8,23 @@ let section2 = document.getElementById("section2");
 let section3 = document.getElementById("section3");
 let section4 = document.getElementById("section4");
 let section5 = document.getElementById("section5");
-let backButton = document.getElementById("backButton");
+let inputfield1 = document.getElementById("fword");
+let h5 = document.querySelector("h5");
+let navigation = document.querySelector("#navigation");
 
 const psection = document.querySelectorAll("p.section");
 
-// let demo = document.getElementById("demo");
-// let soumettre = document.getElementById("soumettre");
-
 const element = document.getElementsByTagName("p");
+
 // Parcourir la collection d'ancres
 anchors.forEach((anchor) => {
   console.log(anchor.href); // Afficher l'URL de chaque lien
 });
 
 function gestionnaireEvenementDoubleClick() {
-  document.write(
-    "le contenue initiale de la page a été écrasé et remplacé  <button class='mt-5' id='backButton'>Retour à la page précedente</button>"
-  );
+  document.write("le contenue initiale de la page a été écrasé et remplacé ");
 }
 
-function gestionnaireEvenementBackClick() {
-  window.history.back();
-}
 function gestionnaireEvenementClickAncres() {
   // Loop through the anchors and add a highlight class
   for (let i = 0; i < anchors.length; i++) {
@@ -65,15 +60,24 @@ function gestionnaireEvenementAllPSection() {
   section5.style.color = "red";
 }
 
-// function gestionnaireEvenementHoverEltForm() {
-//   const x = document.forms["frm1"];
-//   let text = "";
-//   for (let i = 0; i < x.length; i++) {
-//     text += x.elements[i].value + "<br>";
-//   }
-//   demo.innerHTML = text;
-// }
+function upperCase() {
+  const inputfield = document.getElementById("fword");
+  inputfield.value = inputfield.value.toUpperCase();
+}
+function gestionnaireEvenementNodeAddBefore() {
+  const paragraph = document.createElement("p");
+  const nodeParagraph = document.createTextNode(
+    "Creating new HTML Elements - insertBefore()"
+  );
+  paragraph.appendChild(nodeParagraph);
 
+  const element = document.getElementById("mercii");
+  const child = document.getElementById("navigation");
+  element.insertBefore(paragraph, child);
+}
+function gestionnaireEvenementRemove() {
+  h5.remove();
+}
 // Ajouter des gestionnaires d'événements
 merci1.addEventListener("dblclick", gestionnaireEvenementDoubleClick);
 highlightAnchors.addEventListener("click", gestionnaireEvenementClickAncres);
@@ -83,5 +87,7 @@ section2.addEventListener("mouseover", gestionnaireEvenementHoverURI);
 section3.addEventListener("mouseover", gestionnaireEvenementHoverDomaine);
 section3.addEventListener("mouseover", gestionnaireEvenementHoverTagNameP);
 // backButton.addEventListener("click", gestionnaireEvenementBackClick);
-document.addEventListener("click", gestionnaireEvenementAllPSection);
-// section3.addEventListener("mouseover", gestionnaireEvenementHoverEltForm);
+merci.addEventListener("click", gestionnaireEvenementAllPSection);
+merci.addEventListener("click", gestionnaireEvenementNodeAddBefore);
+inputfield1.addEventListener("change", upperCase);
+btn1.addEventListener("click", gestionnaireEvenementRemove);
