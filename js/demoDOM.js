@@ -54,7 +54,7 @@ function gestionnaireEvenementHoverDomaine() {
 
 function gestionnaireEvenementHoverTagNameP() {
   section4.innerHTML =
-    'Le premier paragraphe (index 0) dans  "merci" est: ' +
+    'Le premier paragraphe (index 0) dans  "demoDOM" est: ' +
     element[0].innerHTML;
 }
 
