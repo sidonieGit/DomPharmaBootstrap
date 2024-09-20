@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styleForm.css">
+	<title>Login Form</title>
+</head>
+
+
+<body>
+	<div class="container">
+		<form action="" id="form">
+			<h1>Login</h1>
+			<div class="box">
+				<label for="username">username</label>
+				<input type="text" name="username" id="username" />
+			</div>
+			<div class="box">
+				<label for="password">Passcord</label>
+				<input type="password" name="password" id="password">
+			</div>
+			<button id="login" type="submit">Login</button>
+		</form>
+	</div>
+	<!-- Inclure SweetAlert depuis un CDN -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	<script src="js/login.js"></script>
+</body>
+
+</html>
